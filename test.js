@@ -2,8 +2,7 @@ const fs = require("fs")
 
 const XMLparser = require("./index")
 
-const file = fs.readFileSync("test.xml")
-const xml = file.toString()
+const xml = fs.readFileSync("test.xml", "utf-8")
 
 const xmlData = XMLparser(xml)
 console.log(xmlData)
