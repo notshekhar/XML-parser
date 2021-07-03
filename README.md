@@ -21,8 +21,14 @@ const obj = XMLparse(xml)
 XML:
 
 ```xml
-
-
+<students>
+ <student>
+   <name>Rick Grimes</name>
+   <age>35</age>
+   <subject>Maths</subject>
+   <gender>Male</gender>
+ </student>
+</students>
 ```
 
 Yields:
