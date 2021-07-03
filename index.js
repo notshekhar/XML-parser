@@ -1,12 +1,3 @@
-const code = `
-<!fdfhgsdgsdf>
-<details>
-    <name>shekhar</name>
-    <collage>
-        <name>gbu</name>
-    </collage>
-</details>
-`
 function Token(type, value) {
     this.type = type
     this.value = value
@@ -20,7 +11,7 @@ function lexer(code) {
     while (true) {
         if (counter == codeLength) break
         let c = code[counter]
-        if (c == " " || c == "\n" || c == "\t") {
+        if (c == " " || c == "\n" || c == "\t" || c == "\r") {
             counter++
             continue
         }
@@ -66,9 +57,40 @@ function lexer(code) {
     return tokens
 }
 
-
-
 function parser(tokens) {
-    
+    let root = {}
+    let counter = 0
+    let current_node = root
+    let prev_node = root
+    while (true) {
+        if (counter == tokens.length) break
+        let token = tokens[counter]
+        if (token.type == "tag") {
+            prev_node = current_node
+            current_node[token.value] = {}
+            if (tokens[counter + 1].type == "value") {
+                current_node[token.value] = tokens[counter + 1].value
+                current_node = prev_node
+                counter++
+            } else if (tokens[counter + 1].type == "end-tag") {
+                current_node[token.value] = null
+                current_node = prev_node
+                counter++
+            } else {
+                current_node = current_node[token.value]
+            }
+        }
+        if (token.type == "end-tag") {
+            current_node = prev_node
+        }
+        counter++
+        // break
+    }
+    return root
 }
-parser(lexer(code))
+
+function XMLparser(code) {
+    return parser(lexer(code))
+}
+
+module.exports = XMLparser
