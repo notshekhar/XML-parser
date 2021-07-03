@@ -1,5 +1,5 @@
 {
-  "name": "xml-parser",
+  "name": "xmlparser2",
   "version": "1.0.0",
   "description": "xml parser ",
   "main": "index.js",
