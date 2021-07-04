@@ -1,6 +1,6 @@
 {
   "name": "xmlparser2",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "xml parser ",
   "main": "index.js",
   "scripts": {
