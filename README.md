@@ -21,26 +21,85 @@ const obj = XMLparse(xml)
 XML:
 
 ```xml
-<students>
- <student>
-   <name>Rick Grimes</name>
-   <age>35</age>
-   <subject>Maths</subject>
-   <gender>Male</gender>
- </student>
-</students>
+<?xml version="1.0" encoding="UTF-8"?>
+<note>
+  <to>Tove</to>
+  <from>Jani</from>
+  <heading>Reminder</heading>
+  <body>Don't forget me this weekend!</body>
+  <breakfast_menu>
+    <food>
+      <name>Belgian Waffles</name>
+      <price>$5.95</price>
+      <description>
+   Two of our famous Belgian Waffles with plenty of real maple syrup
+   </description>
+      <calories>650</calories>
+    </food>
+    <food>
+      <name>Berry-Berry Belgian Waffles</name>
+      <price>$8.95</price>
+      <description>
+    Belgian waffles covered with assorted fresh berries and whipped cream
+    </description>
+      <calories>900</calories>
+    </food>
+    <food>
+      <name>French Toast</name>
+      <price>$4.50</price>
+      <description>
+    Thick slices made from our homemade sourdough bread
+    </description>
+      <calories>600</calories>
+    </food>
+    <food>
+      <name>Homestyle Breakfast</name>
+      <price>$6.95</price>
+      <description>
+    Two eggs, bacon or sausage, toast, and our ever-popular hash browns
+    </description>
+      <calories>950</calories>
+    </food>
+  </breakfast_menu>
+</note>
 ```
 
 Yields:
 
 ```json
 {
-    "students": {
-        "student": {
-            "name": "Rick Grimes",
-            "age": "35",
-            "subject": "Maths",
-            "gender": "Male"
+    "note": {
+        "to": "Tove",
+        "from": "Jani",
+        "heading": "Reminder",
+        "body": "Don't forget me this weekend!",
+        "breakfast_menu": {
+            "food": [
+                {
+                    "name": "Belgian Waffles",
+                    "price": "$5.95",
+                    "description": "Two of our famous Belgian Waffles with plenty of real maple syrup\\n   ",
+                    "calories": "650"
+                },
+                {
+                    "name": "Berry-Berry Belgian Waffles",
+                    "price": "$8.95",
+                    "description": "Belgian waffles covered with assorted fresh berries and whipped cream\\n    ",
+                    "calories": "900"
+                },
+                {
+                    "name": "French Toast",
+                    "price": "$4.50",
+                    "description": "Thick slices made from our homemade sourdough bread\\n    ",
+                    "calories": "600"
+                },
+                {
+                    "name": "Homestyle Breakfast",
+                    "price": "$6.95",
+                    "description": "Two eggs, bacon or sausage, toast, and our ever-popular hash browns\\n    ",
+                    "calories": "950"
+                }
+            ]
         }
     }
 }
