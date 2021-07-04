@@ -36,10 +36,50 @@ function lexer(code) {
             }
             while (code[counter] != ">") {
                 c = code[counter]
+                if (c == " ") break
                 word += c
                 counter++
             }
             tokens.push(new Token("tag", word))
+            //adding attribute
+            function addAttribute() {
+                word = ""
+                while (c != "=") {
+                    word += c
+                    counter++
+                    c = code[counter]
+                }
+                let tagClose = word
+                tokens.push(new Token("tag", word))
+                counter++
+                let open = code[counter]
+                counter++
+                c = code[counter]
+                word = ""
+                while (c != open) {
+                    word += c
+                    counter++
+                    c = code[counter]
+                }
+                tokens.push(new Token("value", word))
+                tokens.push(new Token("end-tag", tagClose))
+            }
+            if (c == " ") {
+                tokens.push(new Token("tag", "$"))
+                counter++
+                c = code[counter]
+                // console.log(c)
+                while (code[counter] != ">") {
+                    c = code[counter]
+                    if (c == " " || c == "\n" || c == "\t" || c == "\r") {
+                        counter++
+                        continue
+                    }
+                    addAttribute()
+                    counter++
+                }
+                tokens.push(new Token("end-tag", "$"))
+            }
             counter++
             continue
         } else {

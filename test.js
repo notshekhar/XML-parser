@@ -5,4 +5,4 @@ const XMLparser = require("./index")
 const xml = fs.readFileSync("test.xml", "utf-8")
 
 const xmlData = XMLparser(xml)
-console.log(xmlData)
+console.log(xmlData.note.breakfast_menu)

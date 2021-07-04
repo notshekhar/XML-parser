@@ -27,7 +27,7 @@ XML:
   <from>Jani</from>
   <heading>Reminder</heading>
   <body>Don't forget me this weekend!</body>
-  <breakfast_menu>
+  <breakfast_menu att1="37" att2="21">
     <food>
       <name>Belgian Waffles</name>
       <price>$5.95</price>
@@ -74,6 +74,7 @@ Yields:
         "heading": "Reminder",
         "body": "Don't forget me this weekend!",
         "breakfast_menu": {
+            "$": { "aat1": "37", "aat2": "21" },
             "food": [
                 {
                     "name": "Belgian Waffles",
