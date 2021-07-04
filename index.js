@@ -5,4 +5,8 @@ function XMLparser(code) {
     return Parser(Tokenizer(code))
 }
 
-module.exports = XMLparser
+if (typeof module !== "undefined") {
+    module.exports = XMLparser
+} else {
+    window.XMLparser = XMLparser
+}
