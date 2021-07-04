@@ -1,6 +1,6 @@
 {
   "name": "xmlparser2",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "xml parser ",
   "main": "index.js",
   "scripts": {
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/notshekhar/XML-parser.git"
+    "url": "git+https://github.com/notshekhar/XMLparser.git"
   },
   "author": "notshekhar",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/notshekhar/XML-parser/issues"
+    "url": "https://github.com/notshekhar/XMLparser/issues"
   },
-  "homepage": "https://github.com/notshekhar/XML-parser#readme"
+  "homepage": "https://github.com/notshekhar/XMLparser#readme"
 }

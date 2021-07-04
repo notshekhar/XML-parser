@@ -5,7 +5,7 @@ Simple non-compiant XML parser because we just need to parse some basic response
 ## Installation:
 
 ```
-$ npm install xml-parser
+$ npm install xmlparser2
 ```
 
 ## Example
