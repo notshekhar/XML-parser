@@ -54,7 +54,6 @@ function lexer(code) {
         }
         counter++
     }
-    console.log(tokens)
     return tokens
 }
 
