@@ -12,7 +12,7 @@ $ npm install xmlparser2
 
 ```js
 const fs = require("fs")
-const XMLparse = require("xmlparser2")
+const { XMLparse } = require("xmlparser2")
 const xml = fs.readFileSync("example.xml", "utf8")
 
 const obj = XMLparse(xml)
