@@ -5,7 +5,6 @@ function XMLparser(code) {
     return Parser(Tokenizer(code))
 }
 
-// window.XMLparser = XMLparser
 module.exports = {
     XMLparser,
     renderXML: require("./src/renderer"),
