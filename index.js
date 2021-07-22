@@ -6,4 +6,7 @@ function XMLparser(code) {
 }
 
 // window.XMLparser = XMLparser
-module.exports = XMLparser
+module.exports = {
+    XMLparser,
+    renderXML: require("./src/renderer"),
+}
